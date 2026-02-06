@@ -13,7 +13,19 @@ dist-ssr
 *.local
 
 .env
-.env.example
+.env.local
+.env.*.local
+api/.env
+api/.env.local
+
+# Secret files and credentials
+secret/
+*.json
+!package.json
+!package-lock.json
+!tsconfig*.json
+!components.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
