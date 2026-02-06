@@ -1,0 +1,148 @@
+╔════════════════════════════════════════════════════════════════╗
+║     WHERE TO FIND SCOPES IN ZOHO API CONSOLE                   ║
+╚════════════════════════════════════════════════════════════════╝
+
+STEP 1: Go to Zoho API Console
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🌐 URL: https://api-console.zoho.in/
+
+Login with your email
+
+
+STEP 2: Find Your Application
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+You'll see a page with "My Clients" or "Self Client"
+
+Look for:
+- Client ID: 1000.ZVMTNQNY18JU52BMICKBSHQOIKCEGU
+- Or application name (if you gave it one)
+
+Click on it to open
+
+
+STEP 3: Navigate to "Generate Code" Section
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+On the left sidebar or main page, look for:
+
+📍 "Generate Code" tab/button
+   OR
+📍 "Create Token" 
+   OR
+📍 "Self Client" → "Generate Code"
+
+
+STEP 4: Add/Select Scopes
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+You'll see a section that says:
+
+   "Select Scopes" or "Add Scopes"
+
+LOOK FOR:
+
+   🔍 Search box or dropdown menu
+   🔍 List of available scopes
+   🔍 "Add Scope" button
+
+WHAT TO DO:
+
+1. Click "+ Add Scope" or search box
+
+2. Type or find these EXACT scopes:
+
+   ✅ ZohoCRM.modules.ALL
+      (Under "Zoho CRM" section)
+      
+   ✅ ZohoSheet.dataAPI.ALL
+      (Under "Zoho Sheet" section)
+
+3. Check the checkboxes next to them
+
+4. They should appear in "Selected Scopes" list
+
+
+VISUAL LAYOUT (What you'll see):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────┐
+│                                                         │
+│  Generate Code                                          │
+│                                                         │
+│  ┌───────────────────────────────────────────────────┐ │
+│  │ Scope                                             │ │
+│  │                                                   │ │
+│  │  [Search for scopes...            ] [+ Add Scope]│ │
+│  │                                                   │ │
+│  │  Selected Scopes:                                │ │
+│  │  ☑ ZohoCRM.modules.ALL                          │ │
+│  │  ☑ ZohoSheet.dataAPI.ALL                        │ │
+│  │                                                   │ │
+│  └───────────────────────────────────────────────────┘ │
+│                                                         │
+│  Scope Description: [will show details]                │
+│                                                         │
+│  Time Duration: [3 Minutes ▼]                          │
+│                                                         │
+│  [Generate]  [Cancel]                                  │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+
+
+STEP 5: Generate the Code
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+After selecting both scopes:
+
+1. Set "Time Duration" → 3 minutes or 10 minutes
+
+2. Click "Generate" or "Create" button
+
+3. You'll be redirected to authorize
+
+4. Click "Accept" on the authorization page
+
+5. You'll be redirected to a URL like:
+   http://localhost:3000/callback?code=XXXXX...
+
+6. Copy the code after "code="
+
+
+STEP 6: Exchange Code for Refresh Token
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Run this command IMMEDIATELY (code expires in 3-10 min):
+
+   node api/get-refresh-token.mjs
+
+Paste your code when prompted
+
+
+TROUBLESHOOTING:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ Can't find "Generate Code"?
+   → Look for "Self Client" or your app name first
+   → Click on it, then look for "Generate Code" tab
+
+❓ Don't see ZohoSheet.dataAPI.ALL in the list?
+   → Use the search box: type "sheet"
+   → Make sure you're looking in "Zoho Sheet" section
+   → Click "View All Scopes" if available
+
+❓ Scopes are greyed out?
+   → You might need to enable the service first
+   → Go to Zoho Sheet and create a test sheet
+   → Then come back and try again
+
+❓ Getting "You are not part of org" error?
+   → You need to sign up for Zoho CRM first
+   → Visit: https://www.zoho.in/crm/signup.html
+   → Complete signup, THEN generate token
+
+
+QUICK LINK TO GENERATE CODE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+After logging in to https://api-console.zoho.in/
+
+The direct path is usually:
+Self Client → Generate Code → [Select Scopes] → Generate
