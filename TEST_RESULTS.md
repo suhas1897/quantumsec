@@ -154,13 +154,13 @@ api/
 ```env
 ✅ PORT=3001
 ✅ NODE_ENV=production
-✅ ZOHO_CLIENT_ID=1000.ZVMTNQNY18JU52BMICKBSHQOIKCEGU
-✅ ZOHO_CLIENT_SECRET=dc3dee2b0071b9ff1b7dd743508b3324fd32da29bb
+✅ ZOHO_CLIENT_ID=your_client_id
+✅ ZOHO_CLIENT_SECRET=your_client_secret
 ❌ ZOHO_REFRESH_TOKEN=EXPIRED (needs regeneration)
-✅ ZOHO_SHEET_ID=qkmh6152f57f205f04c9289b2d72a83413868
-✅ EMAIL_USER=chalamcherlasuhas1980@gmail.com
-✅ EMAIL_PASSWORD=epgppblajymwajwl
-✅ ADMIN_EMAIL=kvchandukv4096@gmail.com
+✅ ZOHO_SHEET_ID=your_sheet_id
+✅ EMAIL_USER=your_email@example.com
+✅ EMAIL_PASSWORD=your_app_password
+✅ ADMIN_EMAIL=admin@example.com
 ```
 
 ---
